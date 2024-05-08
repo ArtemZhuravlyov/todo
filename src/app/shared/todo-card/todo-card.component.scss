@@ -1,0 +1,51 @@
+.todo-card-container{
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border-radius: 10px;
+
+  .todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .todo-checkbox-container{
+      display: flex;
+
+      .text-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        span{
+          margin-left: 10px;
+        }
+
+        .title{
+          font-weight: 500;
+        }
+
+        .date{
+          color: darkgrey;
+        }
+      }
+
+    }
+
+    button{
+      color: grey;
+    }
+  }
+
+  .completed{
+    color: grey;
+  }
+
+}
+
+.todo-card-container:hover{
+  background-color: lightcyan;
+}
+
+.selected{
+  background-color: lightblue;
+}

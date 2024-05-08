@@ -1,0 +1,9 @@
+<div class="menu-container">
+  @for (menuItem of menu; track menuItem){
+    <app-menu-item
+      [item]="menuItem"
+      [selected]="menuItem.name === selectedItem"
+      (menuItemClick)="menuClick($event)"
+    ></app-menu-item>
+  }
+</div>

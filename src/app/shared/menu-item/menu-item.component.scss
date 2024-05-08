@@ -1,0 +1,35 @@
+.menu-item-container{
+  display: flex;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 200px;
+  border-radius: 5px;
+
+  .menu-item{
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 5px 2px;
+    display: flex;
+    align-items: center;
+
+    span{
+      margin-left: 10px;
+      font-weight: 300;
+      font-size: 18px;
+    }
+  }
+
+  .counter{
+    color: lightgray;
+  }
+}
+
+.menu-item-container:hover{
+  background-color: lightcyan;
+}
+
+.selected{
+  background-color: lightblue;
+}

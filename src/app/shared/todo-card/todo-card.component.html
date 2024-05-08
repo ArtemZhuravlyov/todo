@@ -1,0 +1,20 @@
+<div class="todo-card-container">
+  <div class="todo" [class.completed]="card.completed">
+    <div class="todo-checkbox-container">
+      <mat-checkbox
+        color="primary"
+        [checked]="card.completed"
+        (change)="onCheckboxChange(card)"
+      ></mat-checkbox>
+      <div class="text-container">
+        <span class="title">{{ card.title }}</span>
+        @if (card.dueDate){
+          <span class="date">{{ card.dueDate | date }}</span>
+        }
+      </div>
+    </div>
+    <button mat-icon-button (click)="deleteItem(card)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

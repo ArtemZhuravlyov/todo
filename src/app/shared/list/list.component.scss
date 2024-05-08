@@ -1,0 +1,27 @@
+.list-container{
+  padding: 20px 30px;
+  width: 40vw;
+  max-height: 90vh;
+  overflow: auto;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+
+  .form-container{
+    box-sizing: border-box;
+
+    .todo-form{
+      display: flex;
+      align-items: center;
+
+      mat-form-field{
+        height: 100%;
+        width: 60%;
+        margin-right: 20px;
+      }
+
+      button{
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

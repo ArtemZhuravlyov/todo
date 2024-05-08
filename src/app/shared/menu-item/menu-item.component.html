@@ -1,0 +1,15 @@
+@if(item){
+  <div class="menu-item-container"
+       [class.selected]="selected"
+       (click)="onClick(item)"
+  >
+    <div class="menu-item">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item.name }}</span>
+    </div>
+
+    @if (count > 0 ) {
+      <div class="counter">{{ count }}</div>
+    }
+  </div>
+}
