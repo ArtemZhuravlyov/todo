@@ -1,4 +1,10 @@
 <div class="main-page-container">
-  <app-menu (selectedMenuItem)="selectMenu($event)"></app-menu>
-  <app-list [selectedMenuItem]="selectedMenuItem"></app-list>
+  <app-menu
+    [totalItemsCount]="totalItemsCount$ | async"
+    (selectedMenuItem)="selectMenu($event)"
+  ></app-menu>
+  <app-list
+    [selectedMenuItem]="selectedMenuItem"
+    [list]="(list$ | async)!"
+  ></app-list>
 </div>

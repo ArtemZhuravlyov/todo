@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MenuService } from "../../core/services/menu.service";
 import { MenuItemComponent } from "../menu-item/menu-item.component";
 import { Menu } from "../../core/utils/menu-interface";
@@ -14,7 +14,7 @@ import { Menu } from "../../core/utils/menu-interface";
 })
 export class MenuComponent {
   @Output() selectedMenuItem = new EventEmitter<string>()
-
+  @Input() totalItemsCount: number | null = 0
   menu = this.menuService.menu
   selectedItem: string = 'Inbox'
 

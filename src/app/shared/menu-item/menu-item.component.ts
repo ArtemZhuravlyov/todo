@@ -13,7 +13,7 @@ import { MatIcon } from "@angular/material/icon";
 })
 export class MenuItemComponent {
   @Input() item!: Menu
-  @Input() count: number = 0
+  @Input() count: number | null = 0
   @Input() selected: boolean = false
   @Output() menuItemClick = new EventEmitter<Menu>()
 

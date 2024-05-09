@@ -28,14 +28,12 @@
     </form>
   </div>
 
-  @if (inbox$ | async; as inbox){
-    @for (item of inbox; track item){
-      <app-todo-card
-        [card]="item"
-        (onTodoCheck)="todoChecked($event)"
-        (onDeleteTodo)="deleteTodo($event)"
-      ></app-todo-card>
-    }
+  @for (item of list; track item){
+    <app-todo-card
+      [card]="item"
+      (onTodoCheck)="todoChecked($event)"
+      (onDeleteTodo)="deleteTodo($event)"
+    ></app-todo-card>
   }
 
 </div>

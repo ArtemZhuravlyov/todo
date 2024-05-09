@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Menu } from "../utils/menu-interface";
+import { MenuEnum, MenuIcons } from "../utils/menu-enum";
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,8 @@ import { Menu } from "../utils/menu-interface";
 export class MenuService {
 
   menu: Menu[] = [
-    { name: 'Inbox', icon: 'inbox'},
+    { name: MenuEnum.Inbox, icon: MenuIcons.Inbox },
+    { name: MenuEnum.Completed, icon: MenuIcons.Completed },
+    { name: MenuEnum.Today, icon: MenuIcons.Today }
   ]
 }

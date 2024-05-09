@@ -3,6 +3,7 @@
     <app-menu-item
       [item]="menuItem"
       [selected]="menuItem.name === selectedItem"
+      [count]="menuItem.name === selectedItem ? totalItemsCount : 0"
       (menuItemClick)="menuClick($event)"
     ></app-menu-item>
   }

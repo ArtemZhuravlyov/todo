@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { map } from "rxjs";
 import { ListItem } from "../../core/utils/list-item.interface";
 import { AsyncPipe } from "@angular/common";
 import { TodoCardComponent } from "../todo-card/todo-card.component";
@@ -32,6 +31,7 @@ import { FirebaseService } from "../../core/services/firebase.service";
 })
 export class ListComponent{
   @Input() selectedMenuItem!: string
+  @Input() list: ListItem[] = []
 
   todoForm: FormGroup = this.formBuilder.group({
     title: [null, [Validators.required]],
@@ -39,21 +39,6 @@ export class ListComponent{
     completed: [false],
     description: [null]
   })
-
-  inbox$ = this.firebaseService.getAllTodos().pipe(
-      map((list: ListItem[]) =>
-        list.sort((a, b) => {
-
-          const completionComparison = a.completed === b.completed ? 0 : a.completed ? 1 : -1;
-
-          if (completionComparison === 0) {
-            return +b.id - +a.id;
-          }
-
-          return completionComparison;
-        })
-      )
-  )
 
   constructor(
     private readonly formBuilder: FormBuilder,
